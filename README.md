@@ -37,4 +37,14 @@ Projektstruktur:
 
 `.github/workflows/deploy.yml` testet, baut und veröffentlicht die App bei jedem Push auf `main` auf GitHub Pages. Einmalig in den Repository-Einstellungen unter **Settings → Pages → Source** „GitHub Actions“ auswählen.
 
+## Android-App (APK)
+
+Die Web-App wird mit [Capacitor](https://capacitorjs.com/) unverändert in eine Android-App verpackt (Ordner `android/`) und läuft dort komplett offline.
+
+- `.github/workflows/android.yml` baut bei jedem Push die APK und stellt sie unter **Releases** als `din5008-trainer.apk` bereit (zusätzlich als Actions-Artefakt).
+- Installation: APK auf dem Handy herunterladen, öffnen und ggf. „Installation aus unbekannten Quellen“ erlauben.
+- Alle Builds sind mit demselben Schlüssel (`android/app/din5008-debug.keystore`) signiert, Updates lassen sich also einfach drüberinstallieren. Der Schlüssel ist bewusst nicht geheim und nur für die private Weitergabe gedacht – für den Play Store einen eigenen Release-Schlüssel anlegen.
+- Lokal bauen (Android Studio bzw. Android SDK und Java 21 nötig): `npm run android:sync`, dann `cd android && ./gradlew assembleDebug`.
+- App-Icons und Splashscreen stammen aus `assets/` (neu erzeugen mit `npx @capacitor/assets generate --android`).
+
 Alle Firmen, Personen und Daten in den Beispielbriefen sind frei erfunden.

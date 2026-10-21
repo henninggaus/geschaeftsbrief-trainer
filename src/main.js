@@ -30,7 +30,10 @@ function route() {
 window.addEventListener('hashchange', route);
 route();
 
-if ('serviceWorker' in navigator && import.meta.env.PROD) {
+// In der Android-App (Capacitor) liegen die Dateien bereits lokal – dort kein Service Worker.
+const isNativeApp = Boolean(window.Capacitor?.isNativePlatform?.());
+
+if ('serviceWorker' in navigator && import.meta.env.PROD && !isNativeApp) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').catch((err) => console.warn('Service Worker:', err));
   });

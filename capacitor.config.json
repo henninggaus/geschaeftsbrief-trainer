@@ -1,0 +1,8 @@
+{
+  "appId": "de.lernapp.din5008trainer",
+  "appName": "DIN 5008 Trainer",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#f5f6fb"
+  }
+}
