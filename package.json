@@ -1,0 +1,19 @@
+{
+  "name": "din5008-trainer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mobile Lern-App (PWA) für Geschäftsbriefe nach DIN 5008 – Layout, Baukasten, Quiz und Lernkarten.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
